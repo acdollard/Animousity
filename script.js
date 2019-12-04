@@ -1,19 +1,23 @@
-function searchAnime(){
-debugger;
+function searchAnime()
+{
 
-// let URL = "https://hummingbirdv1.p.rapidapi.com/anime/"; 
-// let anime = "naturo";
-// let APIkey = "/c74f9e0b83msha04f21a2b6af07dp1b3884jsn61255a0396bf"; 
+for (let i=1; i<21; i++)
+    {
 
 $.ajax({
-
-    URL: "https://kitsu.io/api/edge/anime?filter[genres]=adventure",
+    url: "https://kitsu.io/api/edge/anime/" +[i],
     method: "GET",
-    
-}).then(function(response){
-    console.log(response)
-})
+       })
+.then(function(response)
+        {
+    console.log(response.data.attributes.canonicalTitle);
+    console.log(response.data.attributes.startDate.split("-")[0]);
+    console.log(response.data.attributes.posterImage.original);
+    console.log(response.data.attributes.averageRating)
+        })
+    }
 }
+
 
 
 searchAnime(); 
