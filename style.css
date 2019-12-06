@@ -1,0 +1,69 @@
+
+.hero-full-screen {
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: url("https://www.wallpapermaiden.com/wallpaper/20627/download/3840x2160/anime-world-upside-down-two-dimensions-anime-girl-and-boy.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  
+  .hero-full-screen .middle-content-section {
+    text-align: center;
+    color: #fefefe;
+    position: absolute;
+    top: 270px;
+  }
+  
+  .hero-full-screen .top-content-section {
+    width: 100%;
+  }
+  
+
+  .display-4 {
+    color: gray;
+    mix-blend-mode: difference;
+    font-size: 45px;
+}
+
+
+
+
+
+
+.animousity {
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Shadows Into Light', cursive;
+  width: 100%;
+  color: palevioletred;
+  mix-blend-mode: difference;
+  
+}
+
+
+
+
+
+
+.movie {
+  float:left; 
+  margin:5px;
+  padding:5px;
+  border:1px solid black;
+}
+
+.title {
+  color:blue;
+}
+.poster {
+  height:200px;
