@@ -4,7 +4,7 @@
 function searchAnimeYear()
 {
 
-for (let i=1; i<200; i++)
+for (let i=1; i<500; i++)
     {
 
 $.ajax({
@@ -14,7 +14,7 @@ $.ajax({
 .then(function(response)
         {
 // console.log(response);
-            if(response.data.attributes.startDate.split("-")[0] == 1996){
+            if(response.data.attributes.startDate.split("-")[0] === "2002"){
      
     console.log(response.data.attributes.canonicalTitle);
     console.log(response.data.attributes.startDate.split("-")[0]);
@@ -47,7 +47,7 @@ console.log(response);
         })
     
 }
-searchAnimeGenre(); 
+// searchAnimeGenre(); 
 
 
 
@@ -98,4 +98,4 @@ function searchMovies() {
         console.log(response.Genre.split(" "))
     })
 }
-searchMovies(); 
+// searchMovies(); 
