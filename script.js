@@ -17,7 +17,8 @@ $.ajax({
 .then(function(response)
         {
 // console.log(response);
-            if(response.data.attributes.startDate.split("-")[0] === "2002"){
+           let year = JSON.parse(localStorage.getItem("year"))
+            if(response.data.attributes.startDate.split("-")[0] === year){
      
     // console.log(response.data.attributes.canonicalTitle);
     // console.log(response.data.attributes.startDate.split("-")[0]);
