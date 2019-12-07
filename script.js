@@ -19,7 +19,16 @@ $.ajax({
     console.log(response.data.attributes.canonicalTitle);
     console.log(response.data.attributes.startDate.split("-")[0]);
     console.log(response.data.attributes.posterImage.original);
-    console.log(response.data.attributes.averageRating)
+    console.log(response.data.attributes.averageRating);
+    console.log(response.data.attributes.synopsis);
+
+    let animeName = response.data.attributes.canonicalTitle;
+    let animeYear = response.data.attributes.startDate.split("-")[0];
+    let animePoster = response.data.attributes.posterImage.original;
+    let animeRating = response.data.attributes.averageRating; 
+    let animeSynopsis = response.data.attributes.synopsis; 
+
+
             }
             
         })
