@@ -20,16 +20,14 @@
   .hero-full-screen .middle-content-section {
     text-align: center;
     color: #fefefe;
-    position: absolute;
-    top: 270px;
   }
   
-  .hero-full-screen .top-content-section {
-    width: 100%;
-  }
+  
   
 
-  .display-4 {
+
+
+   .display-4 {
     color: gray;
     mix-blend-mode: difference;
     font-size: 45px;
@@ -55,15 +53,16 @@
 
 
 
-.movie {
-  float:left; 
-  margin:5px;
-  padding:5px;
-  border:1px solid black;
+
+
+  
+.input-group-rounded .input-group-field {
+  border-radius: 5000px 0 0 5000px;
+  padding-left: 1rem;
 }
 
-.title {
-  color:blue;
+.input-group-rounded .input-group-button .button {
+  border-radius: 0 5000px 5000px 0;
+  font-size: 0.8rem;
 }
-.poster {
-  height:200px;
+
