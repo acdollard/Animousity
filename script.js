@@ -28,6 +28,23 @@ $.ajax({
     let animeRating = response.data.attributes.averageRating; 
     let animeSynopsis = response.data.attributes.synopsis; 
 
+    let newDiv = $("<div>");
+    let newImg = $("<img>");
+                newImg.attr("src", animePoster);
+                newImg.attr("height", 200);
+                newImg.attr("width", 120);
+                newImg.attr("alt", "Poster");
+    let name = $("<p>").text("Title: " + animeName);
+    let year = $("<p>").text("Year: " + animeYear);
+    let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
+    let rating = $("<p>").text("Average Rating: " + animeRating);
+
+    $("body").append(newDiv);
+    newImg.appendTo(newDiv);
+    name.appendTo(newDiv);
+    rating.appendTo(newDiv);
+    synopsis.appendTo(newDiv); 
+
 
             }
             
