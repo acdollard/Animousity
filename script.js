@@ -126,8 +126,10 @@ function searchMovies() {
         console.log(response);
         console.log(response.Year);
         console.log(response.Genre);
-        console.log(response.Genre.split(" "));
+        console.log(response.Genre.split(" ")[0].replace(",",""));
+        let movieGenre = response.Genre.split(" ")[0].replace(",","");
         let movieYear = response.Year;
+        localStorage.setItem("genre", JSON.stringify(movieGenre));
         localStorage.setItem("year", JSON.stringify(movieYear));
         
     })
