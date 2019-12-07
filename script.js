@@ -18,7 +18,7 @@ $.ajax({
         {
 // console.log(response);
            let year = JSON.parse(localStorage.getItem("year"))
-            if(response.data.attributes.startDate.split("-")[0] === year){
+            if(response.data.attributes.startDate.split("-")[0] === 2001){
      
     // console.log(response.data.attributes.canonicalTitle);
     // console.log(response.data.attributes.startDate.split("-")[0]);
@@ -61,24 +61,24 @@ $.ajax({
 
 
 
-// returns all anime of a given genre *needs work
-function searchAnimeGenre()
-{
+// // returns all anime of a given genre *needs work
+// function searchAnimeGenre()
+// {
 
-$.ajax({
-    url: "https://kitsu.io/api/edge/anime/?filter[genres]=action,comedy,sci-fi",
-    // need sort??
-    method: "GET",
-       })
-.then(function(response)
-        {
+// $.ajax({
+//     url: "https://kitsu.io/api/edge/anime/?filter[genres]=action,comedy,sci-fi",
+//     // need sort??
+//     method: "GET",
+//        })
+// .then(function(response)
+//         {
  
-console.log(response);
+// console.log(response);
 
-        })
+//         })
     
-}
-// searchAnimeGenre(); 
+// }
+// // searchAnimeGenre(); 
 
 
 
@@ -141,6 +141,7 @@ function searchGenres()
             localStorage.setItem("genre", JSON.stringify(movieGenre));
             localStorage.setItem("year", JSON.stringify(movieYear));
             
+            $("#movie-title").text(movieTitle);
         })
     });
         
