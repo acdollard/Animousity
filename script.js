@@ -1,4 +1,7 @@
-
+$("#yearButton").on("click", function(event){
+    event.preventDefault();
+    searchAnimeYear();
+});
 
 // returns all animes from 1-setNumber made in a given year
 function searchAnimeYear()
@@ -16,11 +19,11 @@ $.ajax({
 // console.log(response);
             if(response.data.attributes.startDate.split("-")[0] === "2002"){
      
-    console.log(response.data.attributes.canonicalTitle);
-    console.log(response.data.attributes.startDate.split("-")[0]);
-    console.log(response.data.attributes.posterImage.original);
-    console.log(response.data.attributes.averageRating);
-    console.log(response.data.attributes.synopsis);
+    // console.log(response.data.attributes.canonicalTitle);
+    // console.log(response.data.attributes.startDate.split("-")[0]);
+    // console.log(response.data.attributes.posterImage.original);
+    // console.log(response.data.attributes.averageRating);
+    // console.log(response.data.attributes.synopsis);
 
     let animeName = response.data.attributes.canonicalTitle;
     let animeYear = response.data.attributes.startDate.split("-")[0];
@@ -29,6 +32,7 @@ $.ajax({
     let animeSynopsis = response.data.attributes.synopsis; 
 
     let newDiv = $("<div>");
+                newDiv.attr("class", "anime_div")
     let newImg = $("<img>");
                 newImg.attr("src", animePoster);
                 newImg.attr("height", 200);
@@ -51,7 +55,7 @@ $.ajax({
         })
     }
 }
-searchAnimeYear(); 
+// searchAnimeYear(); 
 
 
 
@@ -114,14 +118,17 @@ function searchMovies() {
     // let apikey= "?apikey=c98f9918"
 
     $.ajax({
-        url:"http://www.omdbapi.com/?t=fargo&apikey=c98f9918",
+        url:"http://www.omdbapi.com/?t=troy&apikey=c98f9918",
         method: "GET"
     })
     .then(function(response){
-        console.log(response)
-        console.log(response.Year)
-        console.log(response.Genre)
-        console.log(response.Genre.split(" "))
+        console.log(response);
+        console.log(response.Year);
+        console.log(response.Genre);
+        console.log(response.Genre.split(" "));
+        let movieYear = response.Year;
+        localStorage.setItem("year", JSON.stringify(movieYear));
+        
     })
 }
-// searchMovies(); 
+searchMovies(); 
