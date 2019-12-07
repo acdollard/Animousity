@@ -11,7 +11,7 @@ for (let i=1; i<500; i++)
     {
 
 $.ajax({
-    url: "https://kitsu.io/api/edge/anime/" + [i],
+    url: "" + [i],
     method: "GET",
        })
 .then(function(response)
@@ -113,25 +113,35 @@ function searchGenres()
 
 
 // OMDB movie search returns year, genre
-function searchMovies() {
-
-    // let queryurl= "http://www.omdbapi.com/?t=good+will+hunting"
+// function searchMovies() {
+    //     let queryurl= "http://www.omdbapi.com/?t=good+will+hunting"
     // let apikey= "?apikey=c98f9918"
 
-    $.ajax({
-        url:"http://www.omdbapi.com/?t=troy&apikey=c98f9918",
-        method: "GET"
-    })
-    .then(function(response){
-        console.log(response);
-        console.log(response.Year);
-        console.log(response.Genre);
-        console.log(response.Genre.split(" ")[0].replace(",",""));
-        let movieGenre = response.Genre.split(" ")[0].replace(",","");
-        let movieYear = response.Year;
-        localStorage.setItem("genre", JSON.stringify(movieGenre));
-        localStorage.setItem("year", JSON.stringify(movieYear));
+
+    $("#searchBtn").on("click", function(event){
+        event.preventDefault();
+        debugger;
+        let searchTerm = $("#inputField").val().trim();
+        console.log(searchTerm);
+    
+        $.ajax({
+            url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
+            method: "GET"
+        })
+        .then(function(response){
+            console.log(response);
+            console.log(response.Year);
+            console.log(response.Genre);
+            console.log(response.Genre.split(" ")[0].replace(",",""));
+            let movieGenre = response.Genre.split(" ")[0].replace(",","");
+            let movieYear = response.Year;
+            let moviePlot = response.Plot;
+            let movieTitle = response.Title;
+            let moviePoster = response.Poster;
+            localStorage.setItem("genre", JSON.stringify(movieGenre));
+            localStorage.setItem("year", JSON.stringify(movieYear));
+            
+        })
+    });
         
-    })
-}
-searchMovies(); 
+
