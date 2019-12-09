@@ -120,10 +120,11 @@ function searchGenres()
 
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
-        debugger;
         let searchTerm = $("#inputField").val().trim();
         console.log(searchTerm);
-    
+        
+
+
         $.ajax({
             url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
@@ -132,6 +133,8 @@ function searchGenres()
             console.log(response);
             console.log(response.Year);
             console.log(response.Genre);
+            console.log(response.Poster);
+            console.log(response.Title);
             console.log(response.Genre.split(" ")[0].replace(",",""));
             let movieGenre = response.Genre.split(" ")[0].replace(",","");
             let movieYear = response.Year;
@@ -140,8 +143,20 @@ function searchGenres()
             let moviePoster = response.Poster;
             localStorage.setItem("genre", JSON.stringify(movieGenre));
             localStorage.setItem("year", JSON.stringify(movieYear));
+            localStorage.setItem("plot", JSON.stringify(moviePlot));
+            localStorage.setItem("title", JSON.stringify(movieTitle));
+            localStorage.setItem("poster", JSON.stringify(moviePoster));
             
+
+            $("#movie-genre").empty().append(movieGenre);
+            $("#movie-year").empty().append(movieYear);
+            $("#movie-synopsis").empty().append(moviePlot);
+            $("#movie-poster").empty().append(moviePoster);
+
+
         })
     });
+
+
         
 
