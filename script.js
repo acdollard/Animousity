@@ -21,11 +21,11 @@ $.ajax({
            let year = JSON.parse(localStorage.getItem("year"))
             if(response.data.attributes.startDate.split("-")[0] === year){
      
-    console.log(response.data.attributes.canonicalTitle);
-    console.log(response.data.attributes.startDate.split("-")[0]);
-    console.log(response.data.attributes.posterImage.original);
-    console.log(response.data.attributes.averageRating);
-    console.log(response.data.attributes.synopsis);
+    // console.log(response.data.attributes.canonicalTitle);
+    // console.log(response.data.attributes.startDate.split("-")[0]);
+    // console.log(response.data.attributes.posterImage.original);
+    // console.log(response.data.attributes.averageRating);
+    // console.log(response.data.attributes.synopsis);
 
     let animeName = response.data.attributes.canonicalTitle;
     let animeYear = response.data.attributes.startDate.split("-")[0];
@@ -52,8 +52,9 @@ $.ajax({
     // synopsis.appendTo(newDiv); 
 
     $("#card_" + index + "_title").text(animeName);
-    $("#card_" + index + "_rating").text(animeRating);
-    $("#card_" + index + "_synopsis").text(animeYear);
+    $("#card_" + index + "_rating").text("Average Rating: " + animeRating);
+    $("#card_" + index + "_synopsis").text(animeSynopsis);
+    $("#card_" + index + "_synopsis").css("font-size", "10px");
     $("#card_" + index + "_poster").css("background", "url(" + animePoster + ")")
 
 
@@ -63,7 +64,7 @@ $.ajax({
         })
     }
 }
-searchAnimeYear(); 
+// searchAnimeYear(); 
 
 
 
