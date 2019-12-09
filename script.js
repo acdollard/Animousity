@@ -11,7 +11,7 @@ for (let i=1; i<500; i++)
     {
 
 $.ajax({
-    url: "" + [i],
+    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
     method: "GET",
        })
 .then(function(response)
