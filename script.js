@@ -136,23 +136,23 @@ function searchGenres()
             console.log(response.Poster);
             console.log(response.Title);
             console.log(response.Genre.split(" ")[0].replace(",",""));
+            let movieTitle = $("<p>").text( "Title: " + response.Title)
             let movieGenre = response.Genre.split(" ")[0].replace(",","");
-            let movieYear = response.Year;
-            let moviePlot = response.Plot;
-            let movieTitle = response.Title;
-            let moviePoster = response.Poster;
+            let movieYear = $("<p>").text( "Released: " + response.Year);
+            let moviePlot = $("<p>").text( "Plot: " + response.Plot);
+            let moviePoster = $("<img>").attr("src", response.Poster);
+
             localStorage.setItem("genre", JSON.stringify(movieGenre));
             localStorage.setItem("year", JSON.stringify(movieYear));
             localStorage.setItem("plot", JSON.stringify(moviePlot));
             localStorage.setItem("title", JSON.stringify(movieTitle));
             localStorage.setItem("poster", JSON.stringify(moviePoster));
             
+            $("#movie-title").empty();
+            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot, moviePoster);
 
-            $("#movie-genre").empty().append(movieGenre);
-            $("#movie-year").empty().append(movieYear);
-            $("#movie-synopsis").empty().append(moviePlot);
-            $("#movie-poster").empty().append(moviePoster);
-
+            
+            
 
         })
     });
