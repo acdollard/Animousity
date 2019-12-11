@@ -1,22 +1,27 @@
-$("#yearButton").on("click", function(event){
-    event.preventDefault();
-    searchAnimeYear();
-});
+// $("#yearButton").on("click", function(event){
+//     event.preventDefault();
+//     searchAnimeYear();
+// });
 
 // returns all animes from 1-setNumber made in a given year
 function searchAnimeYear()
 {
-
+let index = 1
 for (let i=1; i<500; i++)
     {
 
 $.ajax({
-    url: "" + [i],
+
+    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
+
+    url: "https://kitsu.io/api/edge/anime/" + [i],
+
     method: "GET",
        })
 .then(function(response)
         {
 // console.log(response);
+// console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
             if(response.data.attributes.startDate.split("-")[0] === year){
      
@@ -32,25 +37,32 @@ $.ajax({
     let animeRating = response.data.attributes.averageRating; 
     let animeSynopsis = response.data.attributes.synopsis; 
 
-    let newDiv = $("<div>");
-                newDiv.attr("class", "anime_div")
-    let newImg = $("<img>");
-                newImg.attr("src", animePoster);
-                newImg.attr("height", 200);
-                newImg.attr("width", 120);
-                newImg.attr("alt", "Poster");
-    let name = $("<p>").text("Title: " + animeName);
-    let year = $("<p>").text("Year: " + animeYear);
-    let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
-    let rating = $("<p>").text("Average Rating: " + animeRating);
+    // let newDiv = $("<div>");
+    //             newDiv.attr("class", "anime_div")
+    // let newImg = $("<img>");
+    //             newImg.attr("src", animePoster);
+    //             newImg.attr("height", 200);
+    //             newImg.attr("width", 120);
+    //             newImg.attr("alt", "Poster");
+    // let name = $("<p>").text("Title: " + animeName);
+    // let year = $("<p>").text("Year: " + animeYear);
+    // let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
+    // let rating = $("<p>").text("Average Rating: " + animeRating);
 
-    $("body").append(newDiv);
-    newImg.appendTo(newDiv);
-    name.appendTo(newDiv);
-    rating.appendTo(newDiv);
-    synopsis.appendTo(newDiv); 
+    // $("body").append(newDiv);
+    // newImg.appendTo(newDiv);
+    // name.appendTo(newDiv);
+    // rating.appendTo(newDiv);
+    // synopsis.appendTo(newDiv); 
+
+    $("#card_" + index + "_title").text(animeName);
+    $("#card_" + index + "_rating").text("Average Rating: " + animeRating);
+    $("#card_" + index + "_synopsis").text(animeSynopsis);
+    $("#card_" + index + "_synopsis").css("font-size", "10px");
+    $("#card_" + index + "_poster").css("background", "url(" + animePoster + ")")
 
 
+    index++;
             }
             
         })
@@ -61,52 +73,52 @@ $.ajax({
 
 
 
-// returns all anime of a given genre *needs work
-function searchAnimeGenre()
-{
+// // returns all anime of a given genre *needs work
+// function searchAnimeGenre()
+// {
 
-$.ajax({
-    url: "https://kitsu.io/api/edge/anime/?filter[genres]=action,comedy,sci-fi",
-    // need sort??
-    method: "GET",
-       })
-.then(function(response)
-        {
+// $.ajax({
+//     url: "https://kitsu.io/api/edge/anime/?filter[genres]=action,comedy,sci-fi",
+//     // need sort??
+//     method: "GET",
+//        })
+// .then(function(response)
+//         {
  
-console.log(response);
+// console.log(response);
 
-        })
+//         })
     
-}
-// searchAnimeGenre(); 
+// }
+// // searchAnimeGenre(); 
 
 
 
 
 
-// returns the GENRE DATA of animes from 1-setNumber
-function searchGenres()
-{
+// // returns the GENRE DATA of animes from 1-setNumber
+// function searchGenres()
+// {
 
-    for(let i=1; i<10; i++ )
-    {
-        $.ajax({
-            url: "https://kitsu.io/api/edge/anime/" + [i] + "/genres",
-            method: "GET"
-        })
-        .then(function(response)
-            {
-            let array = response.data
-            for (i=0; i<array.length; i++){
-                console.log(array[i].attributes.name);
-                console.log(i);
+//     for(let i=1; i<10; i++ )
+//     {
+//         $.ajax({
+//             url: "https://kitsu.io/api/edge/anime/" + [i] + "/genres",
+//             method: "GET"
+//         })
+//         .then(function(response)
+//             {
+//             let array = response.data
+//             for (i=0; i<array.length; i++){
+//                 console.log(array[i].attributes.name);
+//                 console.log(i);
     
-            }
+//             }
         
-            })
-    }
-}
-// searchGenres();
+//             })
+//     }
+// }
+// // searchGenres();
 
 
 
@@ -120,10 +132,11 @@ function searchGenres()
 
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
-        debugger;
         let searchTerm = $("#inputField").val().trim();
         console.log(searchTerm);
-    
+        
+
+
         $.ajax({
             url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
@@ -132,16 +145,38 @@ function searchGenres()
             console.log(response);
             console.log(response.Year);
             console.log(response.Genre);
+            console.log(response.Poster);
+            console.log(response.Title);
             console.log(response.Genre.split(" ")[0].replace(",",""));
+            let movieTitle = $("<p>").text( "Title: " + response.Title)
             let movieGenre = response.Genre.split(" ")[0].replace(",","");
-            let movieYear = response.Year;
-            let moviePlot = response.Plot;
-            let movieTitle = response.Title;
-            let moviePoster = response.Poster;
+            let movieYear = $("<p>").text( "Released: " + response.Year);
+            let moviePlot = $("<p>").text( "Plot: " + response.Plot);
+            let moviePoster = $("<img>").attr("src", response.Poster);
+
             localStorage.setItem("genre", JSON.stringify(movieGenre));
             localStorage.setItem("year", JSON.stringify(movieYear));
+            localStorage.setItem("plot", JSON.stringify(moviePlot));
+            localStorage.setItem("title", JSON.stringify(movieTitle));
+            localStorage.setItem("poster", JSON.stringify(moviePoster));
             
+
+            $("#movie-title").empty();
+            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot, moviePoster);
+
+            
+
+            $("#movie-title").text(movieTitle);
+            $("#movie-year").text(movieYear);
+            $("#movie-genre").text(movieGenre);
+            $("#movie-synopsis").text(moviePlot);
+
+            
+
         })
+        searchAnimeYear();
     });
+
+
         
 

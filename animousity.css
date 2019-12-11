@@ -129,7 +129,7 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* -webkit-align-items: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; */
   /* background: url("https://www.wallpapermaiden.com/wallpaper/20627/download/3840x2160/anime-world-upside-down-two-dimensions-anime-girl-and-boy.jpg") center center no-repeat; */
@@ -257,7 +257,7 @@ body {
   }
   
   .flip-card-inner-front {
-    background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat;
+    /* background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat; */
     z-index: 2;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -305,6 +305,10 @@ body {
   
   .flip-card-inner-back-text {
     line-height: 1.3;
+  }
+
+  #card_1_poster {
+    background: url(); 
   }
   
   #anime1 {
