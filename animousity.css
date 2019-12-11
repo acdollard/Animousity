@@ -12,7 +12,9 @@
           flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; 
+
+          align-items: center;
+
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -131,7 +133,7 @@
   }
   
   .flip-card-inner-front {
-    background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat;
+    /* background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat; */
     z-index: 2;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -179,6 +181,10 @@
   
   .flip-card-inner-back-text {
     line-height: 1.3;
+  }
+
+  #card_1_poster {
+    background: url(); 
   }
   
   
