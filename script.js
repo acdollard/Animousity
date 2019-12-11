@@ -12,7 +12,6 @@ for (let i=1; i<500; i++)
 
 $.ajax({
 
-    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
 
     url: "https://kitsu.io/api/edge/anime/" + [i],
 
@@ -23,13 +22,14 @@ $.ajax({
 // console.log(response);
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
-            if(response.data.attributes.startDate.split("-")[0] === year){
+           console.log(year)
+            if(response.data.attributes.startDate.split("-")[0] == year){
      
-    // console.log(response.data.attributes.canonicalTitle);
-    // console.log(response.data.attributes.startDate.split("-")[0]);
-    // console.log(response.data.attributes.posterImage.original);
-    // console.log(response.data.attributes.averageRating);
-    // console.log(response.data.attributes.synopsis);
+    console.log(response.data.attributes.canonicalTitle);
+    console.log(response.data.attributes.startDate.split("-")[0]);
+    console.log(response.data.attributes.posterImage.original);
+    console.log(response.data.attributes.averageRating);
+    console.log(response.data.attributes.synopsis);
 
     let animeName = response.data.attributes.canonicalTitle;
     let animeYear = response.data.attributes.startDate.split("-")[0];
@@ -37,23 +37,6 @@ $.ajax({
     let animeRating = response.data.attributes.averageRating; 
     let animeSynopsis = response.data.attributes.synopsis; 
 
-    // let newDiv = $("<div>");
-    //             newDiv.attr("class", "anime_div")
-    // let newImg = $("<img>");
-    //             newImg.attr("src", animePoster);
-    //             newImg.attr("height", 200);
-    //             newImg.attr("width", 120);
-    //             newImg.attr("alt", "Poster");
-    // let name = $("<p>").text("Title: " + animeName);
-    // let year = $("<p>").text("Year: " + animeYear);
-    // let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
-    // let rating = $("<p>").text("Average Rating: " + animeRating);
-
-    // $("body").append(newDiv);
-    // newImg.appendTo(newDiv);
-    // name.appendTo(newDiv);
-    // rating.appendTo(newDiv);
-    // synopsis.appendTo(newDiv); 
 
     $("#card_" + index + "_title").text(animeName);
     $("#card_" + index + "_rating").text("Average Rating: " + animeRating);
@@ -142,20 +125,21 @@ $.ajax({
             method: "GET"
         })
         .then(function(response){
-            console.log(response);
-            console.log(response.Year);
-            console.log(response.Genre);
-            console.log(response.Poster);
-            console.log(response.Title);
-            console.log(response.Genre.split(" ")[0].replace(",",""));
+            // console.log(response);
+            // console.log(response.Year);
+            // console.log(response.Genre);
+            // console.log(response.Poster);
+            // console.log(response.Title);
+            // console.log(response.Genre.split(" ")[0].replace(",",""));
             let movieTitle = $("<p>").text( "Title: " + response.Title)
             let movieGenre = $("<p>").text( "Genre: " + response.Genre.split(" ")[0].replace(",",""));
             let movieYear = $("<p>").text( "Released: " + response.Year);
+            let local_storage_year = response.Year
             let moviePlot = $("<p>").text( "Plot: " + response.Plot);
             let moviePoster = $("<img>").attr("src", response.Poster);
-
+            // console.log(response.Year);
             localStorage.setItem("genre", JSON.stringify(movieGenre));
-            localStorage.setItem("year", JSON.stringify(movieYear));
+            localStorage.setItem("year", JSON.stringify(local_storage_year));
             localStorage.setItem("plot", JSON.stringify(moviePlot));
             localStorage.setItem("title", JSON.stringify(movieTitle));
             localStorage.setItem("poster", JSON.stringify(moviePoster));
