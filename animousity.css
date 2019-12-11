@@ -16,8 +16,13 @@ body {
   
 }
 
+.button {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .hero-search-filter-logo {
+  font-family: 'Bangers', cursive;
   margin-bottom: 2rem;
+  font-size: 90pt;
 }
 
 .hero-search-filter-content {
@@ -157,7 +162,6 @@ body {
     width: 900px;
     /* border: 5px solid rgb(3, 3, 3); */
     margin-top: 30px;
-    border: 1px solid gray;
   }
   
   .portfolio-resume-overview {
