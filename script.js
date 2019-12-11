@@ -20,7 +20,7 @@ $.ajax({
        })
 .then(function(response)
         {
-console.log(response);
+// console.log(response);
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
             if(response.data.attributes.startDate.split("-")[0] == 2001){
@@ -37,23 +37,6 @@ console.log(response);
     let animeRating = response.data.attributes.averageRating; 
     let animeSynopsis = response.data.attributes.synopsis; 
 
-    // let newDiv = $("<div>");
-    //             newDiv.attr("class", "anime_div")
-    // let newImg = $("<img>");
-    //             newImg.attr("src", animePoster);
-    //             newImg.attr("height", 200);
-    //             newImg.attr("width", 120);
-    //             newImg.attr("alt", "Poster");
-    // let name = $("<p>").text("Title: " + animeName);
-    // let year = $("<p>").text("Year: " + animeYear);
-    // let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
-    // let rating = $("<p>").text("Average Rating: " + animeRating);
-
-    // $("body").append(newDiv);
-    // newImg.appendTo(newDiv);
-    // name.appendTo(newDiv);
-    // rating.appendTo(newDiv);
-    // synopsis.appendTo(newDiv); 
 
     $("#card_" + index + "_title").text(animeName);
     $("#card_" + index + "_rating").text("Average Rating: " + animeRating);
