@@ -11,7 +11,11 @@ for (let i=1; i<500; i++)
     {
 
 $.ajax({
+
+    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
+
     url: "https://kitsu.io/api/edge/anime/" + [i],
+
     method: "GET",
        })
 .then(function(response)
@@ -128,10 +132,11 @@ $.ajax({
 
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
-        debugger;
         let searchTerm = $("#inputField").val().trim();
         console.log(searchTerm);
-    
+        
+
+
         $.ajax({
             url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
@@ -140,23 +145,38 @@ $.ajax({
             console.log(response);
             console.log(response.Year);
             console.log(response.Genre);
+            console.log(response.Poster);
+            console.log(response.Title);
             console.log(response.Genre.split(" ")[0].replace(",",""));
+            let movieTitle = $("<p>").text( "Title: " + response.Title)
             let movieGenre = response.Genre.split(" ")[0].replace(",","");
-            let movieYear = response.Year;
-            let moviePlot = response.Plot;
-            let movieTitle = response.Title;
-            let moviePoster = response.Poster;
+            let movieYear = $("<p>").text( "Released: " + response.Year);
+            let moviePlot = $("<p>").text( "Plot: " + response.Plot);
+            let moviePoster = $("<img>").attr("src", response.Poster);
+
             localStorage.setItem("genre", JSON.stringify(movieGenre));
             localStorage.setItem("year", JSON.stringify(movieYear));
+            localStorage.setItem("plot", JSON.stringify(moviePlot));
+            localStorage.setItem("title", JSON.stringify(movieTitle));
+            localStorage.setItem("poster", JSON.stringify(moviePoster));
             
+
+            $("#movie-title").empty();
+            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot, moviePoster);
+
+            
+
             $("#movie-title").text(movieTitle);
             $("#movie-year").text(movieYear);
             $("#movie-genre").text(movieGenre);
             $("#movie-synopsis").text(moviePlot);
+
             
 
         })
         searchAnimeYear();
     });
+
+
         
 
