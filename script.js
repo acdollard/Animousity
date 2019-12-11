@@ -23,7 +23,7 @@ $.ajax({
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
            console.log(year)
-            if(response.data.attributes.startDate.split("-")[0] == year){
+            if(response.data.attributes.startDate.split("-")[0] === year){
      
     console.log(response.data.attributes.canonicalTitle);
     console.log(response.data.attributes.startDate.split("-")[0]);
