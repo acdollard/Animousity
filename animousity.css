@@ -301,6 +301,7 @@ body {
   
   .flip-card-inner-back-title {
     font-weight: bold;
+    font: white;
   }
   
   .flip-card-inner-back-text {
