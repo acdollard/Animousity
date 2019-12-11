@@ -34,60 +34,46 @@
         </div>
       </header>
       
-      
-    <!-- <div class="hero-full-screen">
-        <div class="jumbotron jumbotron-fluid">
-            <h1 class="animousity">Animousity!</h1>
-            <div class=" input-group input-group-rounded">
-                <input class="input-group-field" id="inputField" type="search">
-                <div class="input-group-button">
-                  <input type="submit" class="button secondary" id = "searchBtn" value="Search">
-                </div>
-            </div>
-        </div> -->
-
-
 <!--Movie shows up in the div below-->
  <container>
     <div class="row">
-            <div class="portfolio-resume-container row">
-                    <div class="columns small-12 medium-5 portfolio-resume-scrolling-overview">
-                      <!-- <div class="portfolio-resume-overview-content">
-                        <h3 class="portfolio-resume-name">Name</h3>
-                        <p>I'm kind of awesome. No really.</p>
-                        <a class="button primary expanded" href="#">Contact Me</a>
-                      </div> -->
-                      <div class="columns small-12 medium-7 portfolio-resume-scrolling">
-                          <h3>SKILLS</h3>
-                          <ul class="portfolio-resume-side-list">
-                            <li>Foundation</li>
-                            <li>Moar Foundation</li>
-                            <li>SCSS</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>HTML</li>
-                          </ul>
-                          <h3>EXPERIENCE</h3>
-                          <p>Look at all this amazing stuff that I've done!</p>
-                          <ul>
-                            <li>Just one damned thing</li>
-                            <li>After another</li>
-                            <li>Like history</li>
-                            <li>One thing</li>
-                            <li>After another</li>
-                          </ul>
-                          <h3>WORK</h3>
-                          <p>I've done work too</p>
-                          <ul>
-                            <li>A Site</li>
-                            <li>Another Site</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <p>Laaa dee daa dee DAAAAAA!</p>
-                    </div>
-                    <div class="columns small-12 medium-7 portfolio-resume-scrolling">
-
+      <div class="portfolio-resume-scrolling-container row">
+        <div class="columns small-12 medium-5 portfolio-resume-overview">
+          <div class="portfolio-resume-overview-content">
+            <h3 class="portfolio-resume-name">Name</h3>
+            <p>I'm kind of awesome. No really.</p>
+            <a class="button primary expanded" href="#">Contact Me</a>
+          </div>
+        </div>
+        <div class="columns small-12 medium-7 portfolio-resume-scrolling">
+          <h3>SKILLS</h3>
+          <ul class="portfolio-resume-side-list">
+            <li>Foundation</li>
+            <li>Moar Foundation</li>
+            <li>SCSS</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+          </ul>
+          <h3>EXPERIENCE</h3>
+          <p>Look at all this amazing stuff that I've done!</p>
+          <ul>
+            <li>Just one damned thing</li>
+            <li>After another</li>
+            <li>Like history</li>
+            <li>One thing</li>
+            <li>After another</li>
+          </ul>
+          <h3>WORK</h3>
+          <p>I've done work too</p>
+          <ul>
+            <li>A Site</li>
+            <li>Another Site</li>
+          </ul>
+        </div>
+      </div>
+      
+      
                       <h3><div id="movie-title"></h3>
                       <p id = "movie-year"></p>
                       <p id = "movie-genre"></p>
@@ -115,11 +101,16 @@
               <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                   <div class="flip-card-inner">
                     <div class="flip-card-inner-front">
+                        <div id="card_1_poster"></div>
+                        <div id="card_1_title"></div>
                            <!-- <span>Book your next adventure</span> -->
                    </div>
                     <div class="flip-card-inner-back">
                       <h3 class="flip-card-inner-back-title"></h3>
                       <p class="flip-card-inner-back-text"> </p>
+                      <div id="card_1_rating"></div>
+                        <div id="card_1_synopsis"></div>
+                        <div id="card_1_genre"></div>
                           <!-- <a href="#" class="button success">Book now</a> -->
                     </div>
                  </div>
@@ -129,11 +120,16 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                    <div class="flip-card-inner">
                      <div class="flip-card-inner-front">
+                       <div id="card_2_poster"></div>
+                       <div id="card_2_title"></div>
                             <!-- <span>Book your next adventure</span> -->
                       </div>
                       <div class="flip-card-inner-back">
                         <h3 class="flip-card-inner-back-title"></h3>
                         <p class="flip-card-inner-back-text"></p>
+                        <div id="card_2_rating"></div>
+                        <div id="card_2_synopsis"></div>
+                        <div id="card_2_genre"></div>
                               <!-- <a href="#" class="button success">Book now</a> -->
                       </div>
                   </div>
@@ -143,11 +139,16 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                <div class="flip-card-inner">
                      <div class="flip-card-inner-front">
+                        <div id="card_3_poster"></div>
+                        <div id="card_3_title"></div>
                             <!-- <span>Book your next adventure</span> -->
                      </div>
                       <div class="flip-card-inner-back">
                         <h3 class="flip-card-inner-back-title"></h3>
                         <p class="flip-card-inner-back-text"></p>
+                        <div id="card_3_rating"></div>
+                        <div id="card_3_synopsis"></div>
+                        <div id="card_3_genre"></div>
                             <!-- <a href="#" class="button success">Book now</a> -->
                      </div>
                 </div>
@@ -157,11 +158,16 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front">
-                    <span>Book your next adventure</span>
+                      <div id="card_4_poster"></div>
+                      <div id="card_4_title"></div>
+                    <!-- <span>Book your next adventure</span> -->
                   </div>
                  <div class="flip-card-inner-back">
                     <h3 class="flip-card-inner-back-title"></h3>
                     <p class="flip-card-inner-back-text"> </p>
+                    <div id="card_4_rating"></div>
+                        <div id="card_4_synopsis"></div>
+                        <div id="card_4_genre"></div>
                     <!-- <a href="#" class="button success">Book now</a> -->
                   </div>
                 </div>
@@ -171,11 +177,16 @@
               <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front">
+                      <div id="card_5_poster"></div>
+                      <div id="card_5_title"></div>
                     <!-- <span>Book your next adventure</span> -->
                 </div>
                   <div class="flip-card-inner-back">
                     <h3 class="flip-card-inner-back-title"></h3>
                     <p class="flip-card-inner-back-text"> </p>
+                    <div id="card_5_rating"></div>
+                        <div id="card_5_synopsis"></div>
+                        <div id="card_5_genre"></div>
                       <!-- <a href="#" class="button success">Book now</a> -->
                   </div>
                 </div>
@@ -185,11 +196,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_6_poster"></div>
+                    <div id="card_6_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_6_rating"></div>
+                        <div id="card_6_synopsis"></div>
+                        <div id="card_6_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -199,11 +215,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_7_poster"></div>
+                    <div id="card_7_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_7_rating"></div>
+                        <div id="card_7_synopsis"></div>
+                        <div id="card_7_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -213,11 +234,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_8_poster"></div>
+                    <div id="card_8_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_8_rating"></div>
+                        <div id="card_8_synopsis"></div>
+                        <div id="card_8_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -227,11 +253,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_9_poster"></div>
+                    <div id="card_9_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_9_rating"></div>
+                        <div id="card_9_synopsis"></div>
+                        <div id="card_9_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -241,11 +272,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_10_poster"></div>
+                    <div id="card_10_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_10_rating"></div>
+                        <div id="card_10_synopsis"></div>
+                        <div id="card_10_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -255,11 +291,16 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
+                    <div id="card_11_poster"></div>
+                    <div id="card_11_title"></div>
                   <!-- <span>Book your next adventure</span> -->
                 </div>
                 <div class="flip-card-inner-back">
                   <h3 class="flip-card-inner-back-title"></h3>
                   <p class="flip-card-inner-back-text"> </p>
+                  <div id="card_11_rating"></div>
+                        <div id="card_11_synopsis"></div>
+                        <div id="card_11_genre"></div>
                   <!-- <a href="#" class="button success">Book now</a> -->
                 </div>
               </div>
@@ -269,11 +310,16 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front">
+                      <div id="card_12_poster"></div>
+                      <div id="card_12_title"></div>
                     <!-- <span>Book your next adventure</span> -->
                   </div>
                   <div class="flip-card-inner-back">
                     <h3 class="flip-card-inner-back-title"></h3>
                     <p class="flip-card-inner-back-text"> </p>
+                    <div id="card_12_rating"></div>
+                        <div id="card_12_synopsis"></div>
+                        <div id="card_12_genre"></div>
                     <!-- <a href="#" class="button success">Book now</a> -->
                   </div>
                 </div>
