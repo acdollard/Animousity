@@ -12,7 +12,7 @@ for (let i=1; i<500; i++)
 
 $.ajax({
 
-    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
+    // url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
 
     url: "https://kitsu.io/api/edge/anime/" + [i],
 
@@ -20,16 +20,16 @@ $.ajax({
        })
 .then(function(response)
         {
-// console.log(response);
+console.log(response);
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
-            if(response.data.attributes.startDate.split("-")[0] === year){
+            if(response.data.attributes.startDate.split("-")[0] == 2001){
      
-    // console.log(response.data.attributes.canonicalTitle);
-    // console.log(response.data.attributes.startDate.split("-")[0]);
-    // console.log(response.data.attributes.posterImage.original);
-    // console.log(response.data.attributes.averageRating);
-    // console.log(response.data.attributes.synopsis);
+    console.log(response.data.attributes.canonicalTitle);
+    console.log(response.data.attributes.startDate.split("-")[0]);
+    console.log(response.data.attributes.posterImage.original);
+    console.log(response.data.attributes.averageRating);
+    console.log(response.data.attributes.synopsis);
 
     let animeName = response.data.attributes.canonicalTitle;
     let animeYear = response.data.attributes.startDate.split("-")[0];
@@ -68,7 +68,7 @@ $.ajax({
         })
     }
 }
-// searchAnimeYear(); 
+searchAnimeYear(); 
 
 
 
