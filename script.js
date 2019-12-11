@@ -132,7 +132,7 @@ $.ajax({
 
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
-        let searchTerm = $("#inputField").val().trim();
+        let searchTerm = $("#findtext").val().trim();
         console.log(searchTerm);
         
 
@@ -149,7 +149,7 @@ $.ajax({
             console.log(response.Title);
             console.log(response.Genre.split(" ")[0].replace(",",""));
             let movieTitle = $("<p>").text( "Title: " + response.Title)
-            let movieGenre = response.Genre.split(" ")[0].replace(",","");
+            let movieGenre = $("<p>").text( "Genre: " + response.Genre.split(" ")[0].replace(",",""));
             let movieYear = $("<p>").text( "Released: " + response.Year);
             let moviePlot = $("<p>").text( "Plot: " + response.Plot);
             let moviePoster = $("<img>").attr("src", response.Poster);
@@ -162,14 +162,17 @@ $.ajax({
             
 
             $("#movie-title").empty();
-            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot, moviePoster);
+            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot);
 
             
 
-            $("#movie-title").text(movieTitle);
-            $("#movie-year").text(movieYear);
-            $("#movie-genre").text(movieGenre);
-            $("#movie-synopsis").text(moviePlot);
+            $("#movie-title").html(movieTitle);
+            $("#movie-year").html(movieYear);
+            $("#movie-genre").html(movieGenre);
+            $("#movie-synopsis").html(moviePlot);
+
+            $("#posterHolder").attr("src", response.Poster);
+
 
             
 
