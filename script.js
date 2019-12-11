@@ -1,9 +1,4 @@
-// $("#yearButton").on("click", function(event){
-//     event.preventDefault();
-//     searchAnimeYear();
-// });
 
-// returns all animes from 1-setNumber made in a given year
 function searchAnimeYear()
 {
 let index = 1
@@ -121,7 +116,7 @@ $.ajax({
 
 
         $.ajax({
-            url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
+            url:"https://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
         })
         .then(function(response){
