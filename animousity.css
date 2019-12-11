@@ -1,8 +1,127 @@
-#header { 
-
+body {
+  background:rgba(41, 36, 36, 0.616);
 }
 
-.hero-full-screen {
+.hero-search-filter {
+ background: url("https://www.wallpapermaiden.com/wallpaper/20627/download/3840x2160/anime-world-upside-down-two-dimensions-anime-girl-and-boy.jpg") center center no-repeat; 
+ height: 300px;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.7;
+  
+}
+
+.hero-search-filter-logo {
+  margin-bottom: 2rem;
+}
+
+.hero-search-filter-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-search-filter-menu {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .hero-search-filter-menu li {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+  }
+  .hero-search-filter-menu li a {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.hero-search-filter-menu a {
+  color: rgb(4, 28, 94);
+  font-weight: bold;
+}
+
+.hero-search-filter-menu a .fa {
+  font-size: 1.125rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.hero-search-filter-menu a:hover {
+  text-decoration: underline;
+}
+
+.hero-search-filter-form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  background: #fefefe;
+  padding: 0.25rem;
+  border-radius: 5px;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-search-filter-form .divider {
+  background-color: #cacaca;
+  width: 1px;
+}
+
+.hero-search-filter-form label {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  color: #8a8a8a;
+  font-weight: bold;
+}
+
+.hero-search-filter-form input,
+.hero-search-filter-form .button {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .hero-search-filter-form {
+    width: 95%;
+  }
+}
+
+.hero-search-filter-form-find,
+.hero-search-filter-form-near {
+  border: 0;
+  box-shadow: none;
+}
+
+.hero-search-filter-form-find:focus,
+.hero-search-filter-form-near:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+
+
+/* .hero-full-screen {
   height: 100vh;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12,19 +131,15 @@
           flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
+          align-items: center; */
+  /* background: url("https://www.wallpapermaiden.com/wallpaper/20627/download/3840x2160/anime-world-upside-down-two-dimensions-anime-girl-and-boy.jpg") center center no-repeat; */
+  /* background-size: cover; */
 
-          align-items: center;
-
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: url("https://www.wallpapermaiden.com/wallpaper/20627/download/3840x2160/anime-world-upside-down-two-dimensions-anime-girl-and-boy.jpg") center center no-repeat;
-  background-size: cover;
-}
 
 .hero-full-screen .middle-content-section {
   text-align: center;
   color: #fefefe;
+  margin: 50px;
 }
 
 .input-group-rounded .input-group-field {
@@ -33,22 +148,21 @@
 }
 
 .input-group-rounded .input-group-button .button {
-  border-radius: 0 5000px 5000px 0;
+  border-radius: 0 500px 500px 0;
   font-size: 0.8rem;
 }
 
-
-
-
-
 .portfolio-resume-scrolling-container {
     height: 400px;
-    border: 1px solid #cacaca;
+    width: 900px;
+    /* border: 5px solid rgb(3, 3, 3); */
+    margin-top: 30px;
+    border: 1px solid gray;
   }
   
   .portfolio-resume-overview {
     height: 400px;
-    display: -webkit-flex;
+    display: -wbkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
@@ -69,15 +183,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("https://placeimg.com/400/400/animals");
+    background-image:url(" ");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.8;
     z-index: 0;
   }
   
   .portfolio-resume-overview-content {
-    max-width: 300px;
+    max-width: 100px;
     z-index: 1;
   }
   
@@ -92,13 +205,24 @@
       overflow-y: auto;
     }
   }
-  
-
+ 
+  .anime-card {
+    width: 1200px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    }
+    
+  .item {
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    line-height: 150px;
+  }
 .flip-card {
     -webkit-perspective: 1000;
             perspective: 1000;
     border: 0;
-    background: transparent;
+    background: black;
   }
   
   .flip-card:hover .flip-card-inner,
@@ -171,7 +295,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-    background: #cacaca;
+    background: black;
     padding: 1rem;
   }
   
@@ -187,4 +311,7 @@
     background: url(); 
   }
   
+  #anime1 {
+    
+  }
   
