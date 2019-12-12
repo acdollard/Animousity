@@ -347,5 +347,8 @@ h3 {
   color: white; 
 }
 
-
+#posterHolder{
+  height: 300px;
+  width: 100%; 
+}
   
