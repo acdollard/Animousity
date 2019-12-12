@@ -218,6 +218,10 @@ header {
   .anime-card {
     width: 1200px;
     white-space: nowrap;
+
+
+    overflow-x: scroll;
+
     /* text-emphasis: wrap;  */
     }
     
@@ -277,6 +281,7 @@ header {
     }
   
   .flip-card-inner-front {
+
     background: url("https://wallpapersmug.com/download/1920x1080/a801aa/sky-clouds-original-anime.jpg") 0 0 no-repeat ;
     z-index: 2;
     display: -webkit-flex;
@@ -288,6 +293,8 @@ header {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+            /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
   }
   
   .flip-card-inner-front span {
@@ -295,7 +302,13 @@ header {
     padding: 0.25rem 0;
     font-size: 1.25rem;
     font-weight: bold;
+
     white-space: normal;
+
+    
+
+
+
   }
   
   .flip-card-inner-back {
@@ -317,6 +330,7 @@ header {
     background: black;
     font: white;
     padding: 1rem;
+
     /* word-wrap: break-word;
     overflow-wrap: break-word; */
     white-space: normal; 
@@ -324,19 +338,24 @@ header {
     overflow-x: hidden;
     padding: 20px;
     text-overflow: clip;
+
   }
   
   .flip-card-inner-back-title {
     font-weight: bold;
     font: white;
+
     overflow-y: scroll; 
     overflow-x: hidden;
+
   }
   
   .flip-card-inner-back-text {
     line-height: 1.3;
+
     font: white; 
     overflow: scroll;
+
   }
 
 p {
@@ -361,5 +380,7 @@ h3 {
   white-space: normal;
 }
   
+
 /* Scroll on flip cards, whole page needs to be stagnant, 
 image on flipcard needs to fit to flipcard, font style change on google fonts */
+

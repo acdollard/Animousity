@@ -4,9 +4,7 @@
     <title>Document</title>
     <meta charset="UTF-8"></meta> 
 
-    <script type="text/javascript"> 
-      document.cookie= "_atssc=google%3B1;expires=Fri, 8 Jan 2021 7:57:14 PM;path=/;SameSite=Lax";
-        </script>
+
 <link href="https://fonts.googleapis.com/css?family=Lilita+One|Nunito&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Concert+One|Bangers&display=swap" rel="stylesheet">
@@ -31,6 +29,7 @@
             <label for="findtext"></label>
             <input id="findtext" class="hero-search-filter-form-find" type="text" />
             <div class="divider">&nbsp;</div>
+
             <button class="button"><i class="fa fa-search" id="searchBtn">Seek</i></button>
           </form>
           <!-- <ul class="hero-search-filter-menu menu align-center">
@@ -47,12 +46,15 @@
 
 <!--Movie shows up in the div below-->
  <container>
-    <div class="row">
+    <div class="row" id="app">
+            <span v-bind:title="message">
       <div class="portfolio-resume-scrolling-container row">
         <div class="columns small-12 medium-5 portfolio-resume-overview">
           <div class="portfolio-resume-overview-content" >
             <h3 class="portfolio-resume-name"></h3>
+
             <img src="" id = "posterHolder" alt="">        
+
           </div>
         </div>
         <div class="columns small-12 medium-7 portfolio-resume-scrolling">
@@ -66,7 +68,9 @@
           </ul>
         </div>
       </div>
+
     </div>
+
   </container>
   
   <container>
@@ -77,10 +81,12 @@
               <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                   <div class="flip-card-inner">
                     <div class="flip-card-inner-front" id="card_1_poster">
+
                         <img ></img>  
                     </div>          
                     <div class="flip-card-inner-back">
                       <p id="card_1_title"></p>
+
                       <p id="card_1_rating"></p>
                       <p id="card_1_synopsis"></p>
                       <p id="card_1_genre"></p>
@@ -90,6 +96,7 @@
           </div>
           <div class="item">
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
+
                    <div class="flip-card-inner">    
                     <div class="flip-card-inner-front" id="card_2_poster">
                       <img></img>
@@ -97,6 +104,7 @@
                     <div class="flip-card-inner-back" style="overflow: auto;">
                         <p id="card_2_title"></p>
                         <p id="card_2_rating"></p>
+
                         <p id="card_2_synopsis"></p>
                         <p id="card_2_genre"></p>       
                       </div>
@@ -107,7 +115,9 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                <div class="flip-card-inner">
                      <div class="flip-card-inner-front" id="card_3_poster">
+
                       <img></img>                                
+
                      </div>
                       <div class="flip-card-inner-back" style="overflow: scroll;"> 
                         <p id="card_3_title"></p>                      
@@ -122,7 +132,9 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front" id="card_4_poster">
+
                     <img></img>                  
+
                   </div>
                  <div class="flip-card-inner-back">  
                     <p id="card_4_title"></p>                    
@@ -137,7 +149,9 @@
               <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front" id="card_5_poster">
+
                     <img ></img>                                 
+
                 </div>
                   <div class="flip-card-inner-back">   
                     <p id="card_5_title"></p>                      
@@ -152,7 +166,9 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_6_poster">
+
                   <img></img>               
+
                 </div>
                 <div class="flip-card-inner-back">   
                     <p id="card_6_title"></p>               
@@ -167,7 +183,9 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_7_poster">
+
                   <img></img>                         
+
                 </div>
                 <div class="flip-card-inner-back"> 
                   <p id="card_7_title"></p>                  
@@ -182,7 +200,9 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_8_poster">
+
                   <img></img>
+
                 </div>
                 <div class="flip-card-inner-back">
                   <p id="card_8_title"></p>                   
@@ -197,10 +217,12 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_9_poster">
+
                   <img></img>
               </div>
                 <div class="flip-card-inner-back">  
                   <p id="card_9_title"></p>                 
+
                   <p id="card_9_rating"></p>
                   <p id="card_9_synopsis"></p>
                   <p id="card_9_genre"></p>                  
@@ -212,7 +234,9 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_10_poster">
+
                     <img></img>
+
                 </div>
                 <div class="flip-card-inner-back">     
                   <p id="card_10_title"></p>             
@@ -227,6 +251,7 @@
           <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front" id="card_11_poster">
+
                   <img></img>
                 </div>                
                 <div class="flip-card-inner-back">   
@@ -234,6 +259,7 @@
                   <p id="card_11_rating"></p>
                   <p id="card_11_synopsis"></p>
                   <p id="card_11_genre"></p>                 
+
                 </div>
               </div>
            </div>
@@ -242,10 +268,12 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
                 <div class="flip-card-inner">
                   <div class="flip-card-inner-front" id="card_12_poster">
+
                     <img></img>
                  </div>
                   <div class="flip-card-inner-back">  
                     <p id="card_12_title"></p>                   
+
                     <p id="card_12_rating"></p>
                     <p id="card_12_synopsis"></p>
                     <p id="card_12_genre"></p>                   
@@ -260,7 +288,14 @@
 
 </container>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="script.js"></script>
 
 </body>

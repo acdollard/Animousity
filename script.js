@@ -1,9 +1,7 @@
-// $("#yearButton").on("click", function(event){
-//     event.preventDefault();
-//     searchAnimeYear();
-// });
+
 
 // returns all animes from 1-setNumber made in a given year
+
 
 function searchAnimeYear()
 {
@@ -57,63 +55,6 @@ $.ajax({
 
 
 
-// // returns all anime of a given genre *needs work
-// function searchAnimeGenre()
-// {
-
-// $.ajax({
-//     url: "https://kitsu.io/api/edge/anime/?filter[genres]=action,comedy,sci-fi",
-//     // need sort??
-//     method: "GET",
-//        })
-// .then(function(response)
-//         {
- 
-// console.log(response);
-
-//         })
-    
-// }
-// // searchAnimeGenre(); 
-
-
-
-
-
-// // returns the GENRE DATA of animes from 1-setNumber
-// function searchGenres()
-// {
-
-//     for(let i=1; i<10; i++ )
-//     {
-//         $.ajax({
-//             url: "https://kitsu.io/api/edge/anime/" + [i] + "/genres",
-//             method: "GET"
-//         })
-//         .then(function(response)
-//             {
-//             let array = response.data
-//             for (i=0; i<array.length; i++){
-//                 console.log(array[i].attributes.name);
-//                 console.log(i);
-    
-//             }
-        
-//             })
-//     }
-// }
-// // searchGenres();
-
-
-
-
-
-// OMDB movie search returns year, genre
-// function searchMovies() {
-    //     let queryurl= "http://www.omdbapi.com/?t=good+will+hunting"
-    // let apikey= "?apikey=c98f9918"
-
-
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
         let searchTerm = $("#findtext").val().trim();
@@ -132,11 +73,13 @@ $.ajax({
             // console.log(response.Poster);
             // console.log(response.Title);
             // console.log(response.Genre.split(" ")[0].replace(",",""));
+
             let movieTitle = $("<p>").text( " " + response.Title)
             let movieGenre = $("<p>").text( "Genre: " + response.Genre.split(" ")[0].replace(",",""));
             let movieYear = $("<p>").text( "Released: " + response.Year);
             let local_storage_year = response.Year
             let moviePlot = $("<p>").text( " " + response.Plot);
+
             let moviePoster = $("<img>").attr("src", response.Poster);
             // console.log(response.Year);
             localStorage.setItem("genre", JSON.stringify(movieGenre));
@@ -168,3 +111,9 @@ $.ajax({
 
         
 
+    var app2 = new Vue({
+        el: '#app',
+        data: {
+          message: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+      })
