@@ -1,9 +1,4 @@
-// $("#yearButton").on("click", function(event){
-//     event.preventDefault();
-//     searchAnimeYear();
-// });
 
-// returns all animes from 1-setNumber made in a given year
 function searchAnimeYear()
 {
 let index = 1
@@ -23,7 +18,7 @@ $.ajax({
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
            console.log(year)
-            if(response.data.attributes.startDate.split("-")[0] == year){
+            if(response.data.attributes.startDate.split("-")[0] === year){
      
     console.log(response.data.attributes.canonicalTitle);
     console.log(response.data.attributes.startDate.split("-")[0]);
@@ -121,7 +116,7 @@ $.ajax({
 
 
         $.ajax({
-            url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
+            url:"https://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
         })
         .then(function(response){
@@ -167,3 +162,9 @@ $.ajax({
 
         
 
+    var app2 = new Vue({
+        el: '#app',
+        data: {
+          message: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+      })
