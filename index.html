@@ -42,7 +42,8 @@
 
 <!--Movie shows up in the div below-->
  <container>
-    <div class="row">
+    <div class="row" id="app">
+            <span v-bind:title="message">
       <div class="portfolio-resume-scrolling-container row">
         <div class="columns small-12 medium-5 portfolio-resume-overview">
           <div class="portfolio-resume-overview-content" >
@@ -65,23 +66,11 @@
       
       
                       
-                      <!-- <p id="movie-year"></p>
-                      <p id="movie-genre"></p>
-                      <p id="movie-synopsis"></p>
-                      <p id="movie-poster"></p> -->
 
-
-
-
-                        <!-- id tags for movie -->
-                      
-                     
-                      
-                        <!-- make id tags for movie -->
-                        
+            </span>            
                     </div>
-            </div>
-        </div>       
+            <!-- </div>
+        </div>        -->
               <!--div below holds anime -->
   </container>
   <container>
@@ -326,6 +315,7 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
