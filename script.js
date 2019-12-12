@@ -4,6 +4,7 @@
 // });
 
 // returns all animes from 1-setNumber made in a given year
+
 function searchAnimeYear()
 {
 let index = 1
@@ -12,7 +13,6 @@ for (let i=1; i<500; i++)
 
 $.ajax({
 
-    url: "https://kitsu.io/api/edge/anime/?filter[startDate]" + [i],
 
     url: "https://kitsu.io/api/edge/anime/" + [i],
 
@@ -23,13 +23,14 @@ $.ajax({
 // console.log(response);
 // console.log(response.data.attributes.startDate.split("-")[0])
            let year = JSON.parse(localStorage.getItem("year"))
+           console.log(year)
             if(response.data.attributes.startDate.split("-")[0] === year){
      
-    // console.log(response.data.attributes.canonicalTitle);
-    // console.log(response.data.attributes.startDate.split("-")[0]);
-    // console.log(response.data.attributes.posterImage.original);
-    // console.log(response.data.attributes.averageRating);
-    // console.log(response.data.attributes.synopsis);
+    console.log(response.data.attributes.canonicalTitle);
+    console.log(response.data.attributes.startDate.split("-")[0]);
+    console.log(response.data.attributes.posterImage.original);
+    console.log(response.data.attributes.averageRating);
+    console.log(response.data.attributes.synopsis);
 
     let animeName = response.data.attributes.canonicalTitle;
     let animeYear = response.data.attributes.startDate.split("-")[0];
@@ -37,23 +38,6 @@ $.ajax({
     let animeRating = response.data.attributes.averageRating; 
     let animeSynopsis = response.data.attributes.synopsis; 
 
-    // let newDiv = $("<div>");
-    //             newDiv.attr("class", "anime_div")
-    // let newImg = $("<img>");
-    //             newImg.attr("src", animePoster);
-    //             newImg.attr("height", 200);
-    //             newImg.attr("width", 120);
-    //             newImg.attr("alt", "Poster");
-    // let name = $("<p>").text("Title: " + animeName);
-    // let year = $("<p>").text("Year: " + animeYear);
-    // let synopsis = $("<p>").text("Synopsis: " + animeSynopsis);
-    // let rating = $("<p>").text("Average Rating: " + animeRating);
-
-    // $("body").append(newDiv);
-    // newImg.appendTo(newDiv);
-    // name.appendTo(newDiv);
-    // rating.appendTo(newDiv);
-    // synopsis.appendTo(newDiv); 
 
     $("#card_" + index + "_title").text(animeName);
     $("#card_" + index + "_rating").text("Average Rating: " + animeRating);
@@ -132,44 +116,48 @@ $.ajax({
 
     $("#searchBtn").on("click", function(event){
         event.preventDefault();
-        let searchTerm = $("#inputField").val().trim();
+        let searchTerm = $("#findtext").val().trim();
         console.log(searchTerm);
         
 
 
         $.ajax({
-            url:"http://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
+            url:"https://www.omdbapi.com/?t=" + searchTerm + "&apikey=c98f9918",
             method: "GET"
         })
         .then(function(response){
-            console.log(response);
-            console.log(response.Year);
-            console.log(response.Genre);
-            console.log(response.Poster);
-            console.log(response.Title);
-            console.log(response.Genre.split(" ")[0].replace(",",""));
-            let movieTitle = $("<p>").text( "Title: " + response.Title)
-            let movieGenre = response.Genre.split(" ")[0].replace(",","");
+            // console.log(response);
+            // console.log(response.Year);
+            // console.log(response.Genre);
+            // console.log(response.Poster);
+            // console.log(response.Title);
+            // console.log(response.Genre.split(" ")[0].replace(",",""));
+            let movieTitle = $("<p>").text( " " + response.Title)
+            let movieGenre = $("<p>").text( "Genre: " + response.Genre.split(" ")[0].replace(",",""));
             let movieYear = $("<p>").text( "Released: " + response.Year);
-            let moviePlot = $("<p>").text( "Plot: " + response.Plot);
+            let local_storage_year = response.Year
+            let moviePlot = $("<p>").text( " " + response.Plot);
             let moviePoster = $("<img>").attr("src", response.Poster);
-
+            // console.log(response.Year);
             localStorage.setItem("genre", JSON.stringify(movieGenre));
-            localStorage.setItem("year", JSON.stringify(movieYear));
+            localStorage.setItem("year", JSON.stringify(local_storage_year));
             localStorage.setItem("plot", JSON.stringify(moviePlot));
             localStorage.setItem("title", JSON.stringify(movieTitle));
             localStorage.setItem("poster", JSON.stringify(moviePoster));
             
 
             $("#movie-title").empty();
-            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot, moviePoster);
+            $("#movie-title").append(movieTitle, movieGenre, movieYear, moviePlot);
 
             
 
-            $("#movie-title").text(movieTitle);
-            $("#movie-year").text(movieYear);
-            $("#movie-genre").text(movieGenre);
-            $("#movie-synopsis").text(moviePlot);
+            $("#movie-title").html(movieTitle);
+            $("#movie-year").html(movieYear);
+            $("#movie-genre").html(movieGenre);
+            $("#movie-synopsis").html(moviePlot);
+
+            $("#posterHolder").attr("src", response.Poster);
+
 
             
 
