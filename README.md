@@ -3,7 +3,17 @@
 Animousity is a project to recommend anime movies and TV shows to anyone who is interested in anime, but does not know where to start. Do you like movies? That's all we need! Animousity takes a user-suggested movie, and will return anime suggestions based on criteria like the year, and genre of your movie. It features an appealing and intuitive user-interface, and anime suggestions cleanly displayed in cards at the bottom of the page, where the user can hover over each card to further inspect their new favorite show. Happy anime-hunting! 
 
 ## Visual
+<img width="1250" alt="Screen Shot 2019-12-12 at 5 55 26 PM" src="https://user-images.githubusercontent.com/55324845/70758613-3471b600-1d09-11ea-8b33-8bde352ec228.png">
 
+	This is what the user sees upon loading the page
+
+<img width="1248" alt="Screen Shot 2019-12-12 at 5 58 12 PM" src="https://user-images.githubusercontent.com/55324845/70758790-acd87700-1d09-11ea-84a7-ebadff6660ed.png">
+
+	After searching for a movie, recommended animes appear in the cards.
+
+<img width="1247" alt="Screen Shot 2019-12-12 at 5 57 25 PM" src="https://user-images.githubusercontent.com/55324845/70758827-c974af00-1d09-11ea-9eec-04823582e1a6.png">
+
+	The user can scroll down and hover over cards to see more info. 
 
 
 ## Coding
